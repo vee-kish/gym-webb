@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | IRON ELITE PERFORMANCE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&amp;family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card:hover {
+            border-color: #c3f400;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow-lime {
+            text-shadow: 0 0 15px rgba(195, 244, 0, 0.4);
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+
+        #checkbox {
+            display: none;
+        }
+
+        .toggle {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition-duration: .5s;
+        }
+
+        .bars {
+            width: 100%;
+            height: 4px;
+            background-color: rgb(176, 92, 255);
+            border-radius: 4px;
+        }
+
+        #bar2 {
+            transition-duration: .8s;
+        }
+
+        #bar1,#bar3 {
+            width: 70%;
+        }
+
+        #checkbox:checked + .toggle .bars {
+            position: absolute;
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle #bar2 {
+            transform: scaleX(0);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle #bar1 {
+            width: 100%;
+            transform: rotate(45deg);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle #bar3 {
+            width: 100%;
+            transform: rotate(-45deg);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle {
+            transition-duration: .5s;
+            transform: rotate(180deg);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#c4c9ac",
+                    "surface-dim": "#131313",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface-container": "#201f1f",
+                    "secondary": "#c6c6c7",
+                    "tertiary": "#ffffff",
+                    "tertiary-fixed": "#e4e2e1",
+                    "secondary-fixed": "#e2e2e2",
+                    "tertiary-container": "#e4e2e1",
+                    "surface-variant": "#353534",
+                    "primary-fixed": "#c3f400",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-low": "#1c1b1b",
+                    "inverse-primary": "#506600",
+                    "primary-container": "#c3f400",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary": "#303030",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#353534",
+                    "on-primary-container": "#556d00",
+                    "background": "#131313",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "primary": "#ffffff",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "inverse-on-surface": "#313030",
+                    "outline-variant": "#444933",
+                    "surface-bright": "#393939",
+                    "on-tertiary-container": "#656464",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "secondary-container": "#454747",
+                    "surface-tint": "#abd600",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#abd600",
+                    "on-primary-fixed": "#161e00",
+                    "on-primary-fixed-variant": "#3c4d00",
+                    "on-secondary": "#2f3131",
+                    "error-container": "#93000a",
+                    "surface": "#131313",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary": "#283500",
+                    "outline": "#8e9379",
+                    "on-tertiary-fixed-variant": "#474746"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "grid-margin": "24px",
+                    "section-gap": "80px",
+                    "base": "8px",
+                    "grid-gutter": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Barlow Condensed"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Barlow Condensed"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "headline-sm": ["Barlow Condensed"],
+                    "display-lg": ["Barlow Condensed"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["80px", {"lineHeight": "1.0", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center px-grid-margin py-4 max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-sm text-primary-fixed uppercase tracking-tighter" href="#">IRON ELITE</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../home_power_grit/home.html">Home</a>
+<a class="font-label-caps text-label-caps text-primary-fixed font-bold border-b-2 border-primary-fixed pb-1" href="service.html">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../pricing_power_grit/pricing.html">Pricing</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../book_a_session_power_grit/book.html">Booking</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../about_us_power_grit/about.html">About Us</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../contact_us_power_grit/contact.html">Contact</a>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps px-6 py-2 uppercase tracking-widest active:scale-95 transition-transform hover:brightness-110">
+                Join Now
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[614px] flex items-center pt-24 overflow-hidden">
+<img alt="High performance gym environment" class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 scale-105" data-alt="A cinematic, low-angle shot of a high-end industrial gym with heavy steel equipment, racks of dumbbells, and overhead fluorescent lighting that creates a high-contrast dark atmosphere. The color palette is dominated by deep charcoal and black, with subtle hints of chrome. The mood is gritty, disciplined, and professionally focused, embodying the energy of an elite performance center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg7Tez8aXZM1KmbDU0vCOHO77cp4IxLImwBdFo-1Dr6QQQ_5eYv5U1lav3DtCCVNV3GCX8pRrANqPCjMFkvEe1nvX4OGBoVSPwSy9jJK3SAVBHumWv21Vau-XQeeH_0Q-zuf0QlHEEJ9TZ6BiSB7lgdkF4MWffGLXWoU70UAzNyqQqATayfIs7aW1UCYc2pPgX-3cgnvHmGxlj6QyLFK_i03HGWRZ11uzpgOXoywANCZTVFCmWjdRTP2JDAkkmcO2Fh72Lz82LwuU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="relative z-10 px-grid-margin max-w-container-max mx-auto w-full">
+<span class="inline-block font-label-caps text-label-caps text-primary-fixed mb-4 tracking-[0.3em] uppercase">Forging Champions</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg uppercase leading-none tracking-tighter max-w-4xl">
+                ELITE <span class="text-primary-fixed italic">PERFORMANCE</span> SERVICES
+            </h1>
+<p class="mt-6 font-body-lg text-body-lg max-w-2xl text-on-surface-variant">
+                We don't just provide equipment; we provide the blueprint for human evolution. Precision-engineered training for those who refuse to settle for average.
+            </p>
+</div>
+</header>
+<main class="py-section-gap px-grid-margin max-w-container-max mx-auto">
+<!-- Bento Grid Services -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter auto-rows-[minmax(300px,auto)]">
+<!-- Personal Training (Large Feature) -->
+<section class="md:col-span-8 group relative overflow-hidden glass-card p-1">
+<div class="relative h-full w-full overflow-hidden">
+<img alt="Personal Training" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-30 grayscale" data-alt="An intense, close-up photograph of a professional personal trainer focusing intently as they spot a client lifting heavy weights. The lighting is dramatic and moody, highlighting the strain of muscle and the sharp edges of the industrial equipment. The scene is rendered in deep dark tones with vibrant electric lime accents reflecting off the metallic surfaces, creating a sense of elite athletic precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVLd0LpWV9uDHskCCisTXBrmyWlJd2LPFvPKdhvTKezWwKvXf0xJJwry4KFtCEXvkGo38rApJUKV5VqR4lzjwed8hOUR1B4Yvfz8VKhTkj1xxuIc2zNDW2i7pSPRK5lnQyPWNJJGt-OHpehchsPe2Ke9_sEHAKDNQx5ZMia0nB-2ZoJGuCmZhMRtcV45yqUZLKCL5kdxvXsmR0hYeycL4TrqiyHaEjikp4paz8_7O_Jm1D788hleu-bR5ypUwc7JhXQPplD0cg2fw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background to-transparent md:w-2/3"></div>
+<div class="relative h-full p-8 md:p-12 flex flex-col justify-end md:justify-center max-w-xl">
+<span class="font-label-caps text-label-caps text-primary-fixed mb-4">01. ELITE COACHING</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Personal Training</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            One-on-one sessions designed specifically for your physiological profile and performance goals. Our master trainers utilize biomechanical analysis to optimize every rep.
+                        </p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-primary-fixed">check_circle</span> Biometric Assessments
+                            </li>
+<li class="flex items-center gap-3 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-primary-fixed">check_circle</span> Custom Periodization Plans
+                            </li>
+<li class="flex items-center gap-3 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-primary-fixed">check_circle</span> Performance Tracking App
+                            </li>
+</ul>
+<div>
+<button class="border border-primary-fixed text-primary-fixed font-label-caps text-label-caps px-8 py-3 uppercase hover:bg-primary-fixed hover:text-on-primary-fixed transition-all active:scale-95">Book Consult</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Group Classes (Tall Feature) -->
+<section class="md:col-span-4 group relative overflow-hidden glass-card p-1">
+<div class="relative h-full w-full overflow-hidden">
+<img alt="Group Classes" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-20 grayscale" data-alt="A high-energy wide shot of a group fitness class in a sleek, dark-themed gym. Athletes are synchronized in motion, illuminated by neon electric lime strips running along the floor and ceiling. The atmosphere is thick with kinetic energy and collective effort. The visual style is modern, sharp, and highly cinematic with deep shadows and vibrant high-contrast highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVgrIMiqF1gcpaA_gCfZeBJoXTcZ16M4DP4RObgMMitY9bi6-S6NXOkvXXL8QMzIaYu-ylBhCpuFAWU0zx2YcPCIK6UNsb_UeRFtoWO6RgLzlFNDZuGwk0HC9oDcXCH0FPWbBP3n2EW95uB-ikKTN7wQ_K230F9FYmkNZM09nhwuo2RqJCMOTFAg4CLjX6LpJRV_f_52fCAsbYdAqBJdpTT89hQALzgyZsDDFA2kdiZlmfEvSHO6jvzEwBh2ipbttQpZOl8hw06UQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="relative h-full p-8 flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-primary-fixed mb-4">02. KINETIC ENERGY</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Group Classes</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            High-intensity, science-backed classes that push you beyond your perceived limits.
+                        </p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="p-3 bg-surface-container-high border-l-2 border-primary-fixed">
+<span class="block font-label-caps text-xs text-primary-fixed">HIIT</span>
+<span class="font-label-caps text-label-caps">STRIKE</span>
+</div>
+<div class="p-3 bg-surface-container-high border-l-2 border-primary-fixed">
+<span class="block font-label-caps text-xs text-primary-fixed">FORCE</span>
+<span class="font-label-caps text-label-caps">LIFT</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-4 uppercase tracking-widest hover:bg-primary-fixed hover:text-on-primary-fixed transition-all">View Schedule</button>
+</div>
+</div>
+</section>
+<!-- Nutrition Coaching (Square) -->
+<section class="md:col-span-6 group relative overflow-hidden glass-card p-1">
+<div class="relative h-full w-full overflow-hidden aspect-video md:aspect-auto">
+<img alt="Nutrition Coaching" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-20 grayscale" data-alt="A minimalist, top-down photograph of premium health supplements and fresh, high-protein ingredients laid out on a dark slate surface. The composition is clean and technical, with soft directional lighting creating elegant shadows. The color palette emphasizes rich greens and deep blacks, reflecting a sophisticated approach to performance nutrition and metabolic health." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG1pfU1__H1vtUa6XCE-ZummilSq4vYd4Ua0YShLVTSN9HiUlR5o3VUy94rzJHkhsV_Hq1jBXhy1Ww9x6WXG82m7163ls2qs6dfpFSe0ZkqBTmC638NAorwGktHR80Q957OE8Mcx9okj4vAxAX2WaQG4SI2NNlbK2WbsQqo-lfl9NBufPbWdtge0rH9Bm-ctOtKmw1LW6-LjFtCX6ASjq9aUxJfSma5cIoKscgxv8uOKGm1yiWAwMBso3hgjEemsMfCp_KZZtVtkg"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-transparent"></div>
+<div class="relative h-full p-8 md:p-10 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-primary-fixed mb-4">03. FUEL ARCHITECTURE</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Nutrition Coaching</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                            Macronutrient programming and metabolic conditioning to optimize body composition and energy levels. We build the fuel plan that sustains elite performance.
+                        </p>
+</div>
+</div>
+</section>
+<!-- Recovery Zone (Square) -->
+<section class="md:col-span-6 group relative overflow-hidden glass-card p-1">
+<div class="relative h-full w-full overflow-hidden aspect-video md:aspect-auto">
+<img alt="Recovery Zone" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-20 grayscale" data-alt="A serene yet high-tech recovery suite featuring a futuristic cryotherapy chamber and infrared sauna elements. The room is bathed in a deep, atmospheric blue light with vibrant electric lime highlights on the digital interface panels. The visual style is hyper-clean and luxurious, suggesting a state-of-the-art facility dedicated to athletic longevity and rapid physical restoration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDczYZgofhJn67N3jLis26HP9lDwvYg8jr2MLrG-QrejErSb-2CjNO6mYvJEpoNOvtrSBB_omIsjhrYZFzdGMLqyUv7VfHBoe9w7hxclFlYKxx4jgCpjaixfAkd1MPc6M2q8B4YO6lEe97uEDkiLuj4JRA4oP-2T1r6TPIC_H9KKmcmFbI1jN0rsSHCmDWljNidaVLYafMI7nyDtJ6C3Jw_aFq45IPdvoZTpf4RCHbYIvnzTxvajYbyIJSHx33hKhOzPQZormtjQvs"/>
+<div class="absolute inset-0 bg-gradient-to-tl from-background via-transparent to-transparent"></div>
+<div class="relative h-full p-8 md:p-10 flex flex-col justify-center items-end text-right">
+<span class="font-label-caps text-label-caps text-primary-fixed mb-4">04. SYSTEM RESTORE</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Recovery Zone</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                            Cryotherapy, infrared saunas, and compression therapy. True strength is found in the ability to recover faster than the competition.
+                        </p>
+</div>
+</div>
+</section>
+</div>
+<!-- Metric Section -->
+<div class="mt-section-gap grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-y border-white/5">
+<div class="text-center">
+<span class="block font-display-lg text-headline-lg text-primary-fixed leading-none">12+</span>
+<span class="font-label-caps text-xs uppercase tracking-widest text-on-surface-variant">Master Coaches</span>
+</div>
+<div class="text-center">
+<span class="block font-display-lg text-headline-lg text-primary-fixed leading-none">500<sup>2</sup></span>
+<span class="font-label-caps text-xs uppercase tracking-widest text-on-surface-variant">Training Floor</span>
+</div>
+<div class="text-center">
+<span class="block font-display-lg text-headline-lg text-primary-fixed leading-none">24/7</span>
+<span class="font-label-caps text-xs uppercase tracking-widest text-on-surface-variant">Elite Access</span>
+</div>
+<div class="text-center">
+<span class="block font-display-lg text-headline-lg text-primary-fixed leading-none">0%</span>
+<span class="font-label-caps text-xs uppercase tracking-widest text-on-surface-variant">Excuses</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-surface-variant mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter px-grid-margin max-w-container-max mx-auto">
+<div class="md:col-span-4">
+<h3 class="font-display-lg text-headline-lg text-primary-fixed mb-6">IRON ELITE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xs">
+                    The absolute standard in performance fitness. Join the elite. Build your legacy.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-body-md">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-body-md">hub</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-primary-fixed mb-6">EXPLORE</h4>
+<nav class="flex flex-col gap-4">
+<a class="font-body-md text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Location</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Schedule</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Programs</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Membership</a>
+</nav>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-primary-fixed mb-6">LEGAL</h4>
+<nav class="flex flex-col gap-4">
+<a class="font-body-md text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Terms of Service</a>
+</nav>
+</div>
+<div class="md:col-span-4">
+<h4 class="font-label-caps text-label-caps text-primary-fixed mb-6">NEWSLETTER</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Get performance insights and early access to workshops.</p>
+<div class="flex">
+<input class="bg-surface-container-high border-none text-on-surface-variant font-label-caps px-4 py-3 w-full focus:ring-1 focus:ring-primary-fixed transition-all" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="bg-primary-fixed text-on-primary-fixed px-4 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-12 mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-label-caps text-xs text-on-surface-variant">© 2026 IRON ELITE PERFORMANCE. ALL RIGHTS RESERVED.</span>
+                    <span class="font-label-caps text-xs text-on-surface-variant opacity-60"><a href="https://www.veunecour.com" target="_blank" rel="noopener noreferrer">Created with ❤️ by Veune Cour</a></span>
+<span class="font-label-caps text-xs text-on-surface-variant">DESIGNED FOR THE 1%</span>
+</div>
+</div>
+</footer>
+<!-- FAB (Suppressed as per rules for detailed/service pages, but including as logic check - if needed for booking only) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-primary-fixed text-on-primary-fixed shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<script>
+        // Micro-interactions for smooth revealing of cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | IRON ELITE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&amp;family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#c4c9ac",
+                    "surface-dim": "#131313",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface-container": "#201f1f",
+                    "secondary": "#c6c6c7",
+                    "tertiary": "#ffffff",
+                    "tertiary-fixed": "#e4e2e1",
+                    "secondary-fixed": "#e2e2e2",
+                    "tertiary-container": "#e4e2e1",
+                    "surface-variant": "#353534",
+                    "primary-fixed": "#c3f400",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-low": "#1c1b1b",
+                    "inverse-primary": "#506600",
+                    "primary-container": "#c3f400",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary": "#303030",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#353534",
+                    "on-primary-container": "#556d00",
+                    "background": "#131313",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "primary": "#ffffff",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "inverse-on-surface": "#313030",
+                    "outline-variant": "#444933",
+                    "surface-bright": "#393939",
+                    "on-tertiary-container": "#656464",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "secondary-container": "#454747",
+                    "surface-tint": "#abd600",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#abd600",
+                    "on-primary-fixed": "#161e00",
+                    "on-primary-fixed-variant": "#3c4d00",
+                    "on-secondary": "#2f3131",
+                    "error-container": "#93000a",
+                    "surface": "#131313",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary": "#283500",
+                    "outline": "#8e9379",
+                    "on-tertiary-fixed-variant": "#474746"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "grid-margin": "24px",
+                    "section-gap": "80px",
+                    "base": "8px",
+                    "grid-gutter": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Barlow Condensed"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Barlow Condensed"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "headline-sm": ["Barlow Condensed"],
+                    "display-lg": ["Barlow Condensed"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["80px", {"lineHeight": "1.0", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #131313; color: #e5e2e1; -webkit-font-smoothing: antialiased; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-card:hover { border-color: #c3f400; transition: all 0.3s ease; }
+        .hero-gradient { background: linear-gradient(to bottom, rgba(19, 19, 19, 0) 0%, rgba(19, 19, 19, 1) 100%); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+        #checkbox {
+            display: none;
+        }
+
+        .toggle {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition-duration: .5s;
+        }
+
+        .bars {
+            width: 100%;
+            height: 4px;
+            background-color: rgb(176, 92, 255);
+            border-radius: 4px;
+        }
+
+        #bar2 {
+            transition-duration: .8s;
+        }
+
+        #bar1,#bar3 {
+            width: 70%;
+        }
+
+        #checkbox:checked + .toggle .bars {
+            position: absolute;
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle #bar2 {
+            transform: scaleX(0);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle #bar1 {
+            width: 100%;
+            transform: rotate(45deg);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle #bar3 {
+            width: 100%;
+            transform: rotate(-45deg);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked + .toggle {
+            transition-duration: .5s;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center px-grid-margin py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-sm text-primary-fixed uppercase tracking-tighter">IRON ELITE</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../home_power_grit/home.html">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../services_power_grit/service.html">Services</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../pricing_power_grit/pricing.html">Pricing</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../book_a_session_power_grit/book.html">Booking</a>
+<a class="font-label-caps text-label-caps text-primary-fixed font-bold border-b-2 border-primary-fixed pb-1" href="about.html">About Us</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="../contact_us_power_grit/contact.html">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-label-caps text-label-caps active:scale-95 transition-transform">Join Now</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[819px] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Gym Background" class="w-full h-full object-cover grayscale opacity-50" data-alt="A cinematic, high-contrast wide shot of a premium industrial gym at night. Glowing electric lime accents highlight modern power racks and heavy iron plates against deep charcoal walls. The lighting is moody and focused, creating a high-performance atmospheric grit. Professional equipment is perfectly arranged in a vast, minimalist training space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH7lIs734RG_ubreqzmyW1yb_H54JXeF2T28yPOb6A16NKwIskh97f1OODjLoyV3tjBf0emkscKCeABTXsaTZ58DTDChBNEj-RVN4o7avN3pB9QbQeVdjAdaVcwpC45WNFNfMduZtO0yMbbNKQ7kItkvxWwr8XW7ajV8qxn24a256Z1tu52vKVAKW5KAPQyZXpK89Hk0lJwf3DIvy10syL5a3_OXF_Swn5fnytce5LfmmQ7GcPjpx9gM5O_CQ_-LutrXN0IS3THy0"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 px-grid-margin max-w-container-max mx-auto w-full">
+<span class="inline-block bg-primary-fixed text-on-primary-fixed px-3 py-1 font-label-caps text-label-caps mb-4">THE POWER &amp; GRIT PHILOSOPHY</span>
+<h1 class="font-display-lg text-display-lg uppercase mb-6 leading-none">Disciplined<br/><span class="text-primary-fixed">Strength.</span></h1>
+<p class="max-w-2xl font-body-lg text-body-lg text-on-surface-variant">We don't just provide a space to lift; we provide the architecture for high-performance living. Founded on the principles of kinetic energy and industrial luxury.</p>
+</div>
+</header>
+<!-- Mission Section -->
+<section class="py-section-gap px-grid-margin max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="glass-card p-10 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]">fitness_center</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-6 text-primary">Our Mission</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">At Iron Elite, our mission is to fuse technical precision with unyielding intensity. We believe that elite performance is a result of calculated grit and the refusal to settle for mediocrity. Our environment is designed to foster a community of athletes who demand more from themselves every single day.</p>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<div class="text-primary-fixed font-display-lg text-headline-lg mb-1">01</div>
+<div class="font-label-caps text-label-caps uppercase text-primary">Elite Engineering</div>
+</div>
+<div>
+<div class="text-primary-fixed font-display-lg text-headline-lg mb-1">02</div>
+<div class="font-label-caps text-label-caps uppercase text-primary">Community First</div>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="relative aspect-square">
+<img alt="Grit" class="w-full h-full object-cover border-l-4 border-primary-fixed" data-alt="Close-up artistic shot of a chalk-covered hand gripping a heavy barbell in a dark gym. Electric lime light catches the dust in the air. The mood is intense and focused, emphasizing the grit and dedication of strength training in a high-contrast industrial luxury setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT5HyCd-Oq-DaxAmaE1dyDi1CzEoDIllKe5e6fD1rof0Rrdox6_AAWoOi8aYlLBpe7ELTeV379k1fRxRM7anLXv9uHAFPR6ZOX43-hqisso_84bJnhipuxpdDYrPRe2M9YPi7zQw-7FGl3SPY9xIg54c05DcUITRrMCFMI3vW4bT7fsyDIEt3qBQOQNNM7lvjOPBLMNCTrAo8OiDSlBkvH-3vRbAy98C-j_4vzvv6Cp6XAX_kugHSc2wznzpFRQr0eOgqhqTMQ5Dg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Facility Gallery - Bento Grid -->
+<section class="bg-surface-container-low py-section-gap overflow-hidden">
+<div class="px-grid-margin max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label-caps text-label-caps text-primary-fixed uppercase tracking-widest">The Environment</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary">Industrial Luxury Facilities</h2>
+</div>
+<div class="hidden md:block">
+<button class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed transition-colors">
+                        VIEW FULL TOUR <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[800px] md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden">
+<img alt="Main Floor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Wide shot of the main lifting floor at Iron Elite gym. Rows of custom matte black power racks and dumbbells. The floor is seamless black rubber, reflecting subtle electric lime overhead lighting. The space is vast, clean, and organized with military precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyDnsay0F2cK3jSmITv0DS6RhITVGDoCtV8gEHgtDjq55PoAh4or6POr9CiCziN10prD1KKuI-b4jRmE7lxpJIX13xln5U7BGBgWglDJ_1gRBGuOzXF1hi93u7VKdG2bqtPisgnlbqdTqBiMMekFyulz7thPM8M4ccbOsmjntlP7_eVtHy8jOHn4T7lPAwnJKySIId8fDPTf6zsRORNVNl3y39slVC5jozqQ9cip89Jne_QTyjIgKdwiHdplMtEyGP6H1E8fPryzU"/>
+<div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
+<span class="text-primary-fixed font-label-caps text-label-caps mb-2">POWER ZONE</span>
+<h3 class="text-primary font-headline-sm text-headline-sm uppercase">Olympic Platforms</h3>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden">
+<img alt="Recovery" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Interior of a luxury gym recovery lounge with frosted glass walls and dark leather seating. A dedicated cryotherapy tank and compression gear area are visible. The lighting is soft and cool, contrasting with the high-intensity workout areas." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1ROJf0IQvE-L2wXCoXFphKGZcpt9kzAC4UO32Piih1zHQXTM_Wwg-ODeaH5DZFeK8yrV1bFqBtJ9H_ifR2AyOA_z6dXUMRiHjHRaw-7dmJS-t7QIFhcrQBeYFQIoywI9IJynx7U-nwxPj2kUKtXvE9gQCJHedhNFsA-gi_gcH88PJ20eGgSQ41kuiYFO_isbs78qUOq5T9AmEDY8RITCdSTsRJHhY44tLKrrr2ETds3wy1UX_kYe1_El6ZF6SfqyDq1gsag17wY4"/>
+<div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
+<h3 class="text-primary font-headline-sm text-headline-sm uppercase">Recovery Suite</h3>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden">
+<img alt="Functional" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A specialized turf section in a modern gym featuring a weighted sled and battle ropes. The lime green turf provides a vibrant pop against the dark charcoal walls. Bright spotlighting emphasizes the functional training path." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu5Gdvhnd25BBVSiS5Jc0MJVmado5A4feTv9oeCkBLAxwmNanaRdWxONO6yI4b7URfZDdnQn0wjUXJBrWyy3sn0ki0yCSLfD76OEXxkZKu8W7jRzwDwHvRpNwL2x4j20XBSkEiKRsgXP6_BksgkF2En1xCfwELvkK_Xghw3873lCL8T4EVbE4s5JCdp_pX5FPMrUDD9LKYLGa_GANSboHi-QYmRqXYjrKbgPzrbIUosyWAkZC_Xk1pyXK60Q41DOW5a48hDtMuYUQ"/>
+<div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
+<h3 class="text-primary font-headline-sm text-headline-sm uppercase">Kinetic Turf</h3>
+</div>
+</div>
+<div class="md:col-span-2 md:row-span-1 relative group overflow-hidden">
+<img alt="Cardio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Professional cardio theater with premium treadmills and rowers facing a dark, minimalist wall with neon branding. Each machine is state-of-the-art with integrated digital displays showing biometric data in electric lime colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk5OrTPdi0l7l8vfVwRhURe7SyAbR9PoG0p701fxmrnZWqWJYwe3P08EAa5P1FxhW1N2Qz7G2ho30R32aMjXB2nE3KEA7MRWRiAT3FzlH6DRV3-xS6fmBagLbuku9zjk-8HrKrhuckQNEaJt27sYCbn6sXNTryOqWdjz8Uk2HG6fZFKWmdNYArsfRDw7T17dze67XMwTVGcdqI-Yvqn2fopsR6Coj5H1IgOMwMkf20-0gqm2sDQCArdOHPiz7BG-057oo8fODd_fg"/>
+<div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
+<h3 class="text-primary font-headline-sm text-headline-sm uppercase">Cardio Theater</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet the Trainers Section -->
+<section class="py-section-gap px-grid-margin max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-primary-fixed uppercase tracking-widest">The Vanguard</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary">Meet Your Trainers</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Trainer 1 -->
+<div class="group">
+<div class="relative h-[450px] mb-6 overflow-hidden">
+<img alt="Trainer 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Professional studio headshot of a muscular male fitness coach with a focused expression. He is wearing a dark, branded athletic shirt. The background is a textured dark grey with sharp side lighting that creates dramatic shadows and highlights muscle definition. Aesthetic matches industrial luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW0wVC1F5dAcAia3Vp4cgUBGNWEn5UCiSOQnqPW_BogCFhaT8nb2tn0vWTEDjCi0SXLVg0vt6PSLxURBCYV9D4MmSqZOGqT13Ldzz4w5zkaoGIhH7G046Hv-8KeyMxEK3AAkVNSyvcbVGz1dmSL3X9E-X8dNBZYlZmJGzC3MqbSRBlSaxC7FTGxlvdP7kh61AOdbKBxT8ivxcRvRbzeogjBeqT-qOvNq0zZJZztM-ez8bHnlzIw7dCUoE_zCUxx7f898xAIKdAmlk"/>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="flex gap-4">
+<a class="text-primary hover:text-primary-fixed" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-primary hover:text-primary-fixed" href="#"><span class="material-symbols-outlined">schedule</span></a>
+</div>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary">Marcus Thorne</h3>
+<p class="font-label-caps text-label-caps text-primary-fixed mb-2">HEAD OF PERFORMANCE</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Specializing in metabolic conditioning and elite strength architecture with 15+ years experience.</p>
+</div>
+<!-- Trainer 2 -->
+<div class="group">
+<div class="relative h-[450px] mb-6 overflow-hidden">
+<img alt="Trainer 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Professional studio headshot of a strong female trainer with an intense gaze and confident posture. She has athletic braids and is wearing a sleek black compression top. High-key lighting highlights her features against a dark, industrial gym background. Aesthetic is powerful and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfhI-gkMQBGP2L0UwRQfBMdHr5zJV9u6cmVVKBMBwYry3bZZ9cJMC5KEHFariqNHoT3bBcaE6KExKZpOdmlB7TYafIedWoyFvSX8xxIf2Y7Yw3COXRy4ArES0_UQ5jNTA6JpyzUzNnPn_Tc72urYEPh07XkGJNhTCKlVIzLqpwf0S4XsL2hluloRzlsyhU_Io8twRN9-42bH46JXrJ40wTdoKe-CIlJHGAwzr7BFki6Vph-pN-LpSAWe2AOhPuzEoGdfLOdtc95oI"/>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="flex gap-4">
+<a class="text-primary hover:text-primary-fixed" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-primary hover:text-primary-fixed" href="#"><span class="material-symbols-outlined">schedule</span></a>
+</div>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary">Sarah Vance</h3>
+<p class="font-label-caps text-label-caps text-primary-fixed mb-2">POWERLIFTING COACH</p>
+<p class="text-on-surface-variant font-body-md text-body-md">National record holder focused on technical mastery and maximum force production.</p>
+</div>
+<!-- Trainer 3 -->
+<div class="group">
+<div class="relative h-[450px] mb-6 overflow-hidden">
+<img alt="Trainer 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Professional headshot of a male trainer with a rugged, determined look. He is standing in front of heavy industrial gym equipment. Moody, dramatic lighting with electric lime accents in the background. His presence is commanding and athletic. Minimalist high-contrast style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF8BLT1dlyqDa6qZDU6RluA0V9nBBwsgbc-g51rI3tR0MxVyX2ox1w36Okyi9tt_BvvDPeUrDzXaBRMFuIuXsVjkHhU1O5tbYlEOBwUY-khBq-Z4jK1vuLkqKELBd00AzT4wceI0BrpPt04KpswDEp1jPXxM9GKdYhHtifZF4G1AdN4v6cyvc3rciDVF3K346Re57dz_tzIOVRC_7jwWgWcoQ28xJRM1SQQsgxjOZWscBDhfYGHOcPI3BL3Xhxp7ssQ8eedK03wt4"/>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="flex gap-4">
+<a class="text-primary hover:text-primary-fixed" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-primary hover:text-primary-fixed" href="#"><span class="material-symbols-outlined">schedule</span></a>
+</div>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary">David Kane</h3>
+<p class="font-label-caps text-label-caps text-primary-fixed mb-2">MOBILITY SPECIALIST</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Integrating biomechanics and athletic recovery to ensure longevity in high-performance training.</p>
+</div>
+</div>
+</section>
+<!-- Community Metrics -->
+<section class="bg-primary-container text-on-primary-container py-16">
+<div class="px-grid-margin max-w-container-max mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="font-display-lg text-headline-lg mb-1">500+</div>
+<div class="font-label-caps text-label-caps uppercase tracking-tighter opacity-80">ACTIVE ATHLETES</div>
+</div>
+<div>
+<div class="font-display-lg text-headline-lg mb-1">12k</div>
+<div class="font-label-caps text-label-caps uppercase tracking-tighter opacity-80">LBS MOVED DAILY</div>
+</div>
+<div>
+<div class="font-display-lg text-headline-lg mb-1">15</div>
+<div class="font-label-caps text-label-caps uppercase tracking-tighter opacity-80">ELITE TRAINERS</div>
+</div>
+<div>
+<div class="font-display-lg text-headline-lg mb-1">24/7</div>
+<div class="font-label-caps text-label-caps uppercase tracking-tighter opacity-80">UNRESTRICTED ACCESS</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter px-grid-margin max-w-container-max mx-auto">
+<div class="md:col-span-4">
+<div class="font-display-lg text-headline-lg text-primary-fixed uppercase tracking-tighter mb-4">IRON ELITE</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">High-performance fitness environment built on kinetic energy and disciplined strength.</p>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase">Quick Links</h4>
+<div class="flex flex-col gap-4 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Location</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Schedule</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase">Social</h4>
+<div class="flex flex-col gap-4 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">YouTube</a>
+</div>
+</div>
+<div class="md:col-span-4">
+<h4 class="font-label-caps text-label-caps text-primary mb-6 uppercase">Newsletter</h4>
+<div class="flex flex-col gap-4">
+<div class="relative">
+<input class="w-full bg-surface-container border-b border-on-surface-variant text-primary p-3 focus:border-primary-fixed focus:ring-0 transition-all placeholder:text-on-surface-variant" placeholder="YOUR EMAIL" type="email"/>
+<button class="absolute right-0 top-0 h-full px-4 text-primary-fixed hover:scale-110 transition-transform"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="md:col-span-12 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex flex-col gap-2 text-left md:text-left">
+    <div class="font-body-md text-body-md text-on-surface-variant opacity-60">© 2026 IRON ELITE PERFORMANCE. ALL RIGHTS RESERVED.</div>
+    <div class="font-body-md text-body-md text-on-surface-variant opacity-60"><a href="https://www.veunecour.com" target="_blank" rel="noopener noreferrer">Created with ❤️ by Veune Cour</a></div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant">verified_user</span>
+<span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+<span class="material-symbols-outlined text-on-surface-variant">security</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for scrolling
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2');
+            }
+        });
+
+        // Hover effect for metrics
+        const metrics = document.querySelectorAll('.grid-cols-2 > div');
+        metrics.forEach(metric => {
+            metric.addEventListener('mouseenter', () => {
+                metric.classList.add('scale-105', 'transition-transform');
+            });
+            metric.addEventListener('mouseleave', () => {
+                metric.classList.remove('scale-105');
+            });
+        });
+    </script>
+</body></html>
